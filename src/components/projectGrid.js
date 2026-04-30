@@ -22,10 +22,9 @@ const Project = ({project, index}) => {
       <div className='grid gap-10'>
         <div className='flex gap-5 sm-copy black'>
           <p>0.{index} {project.title}</p>
-          <span>/</span>
-          <a href='#'>Visit Site</a>
+          {( project.link ? <><span className='grey'>/</span><a className='link-gr' href={project.link}>Visit Site</a></>:'')}
         </div>
-        <div className='op-50 w-80'>
+        <div className='op-50 w-90'>
           {project.description}
         </div>
         <div className='flex op-50 space-between'>

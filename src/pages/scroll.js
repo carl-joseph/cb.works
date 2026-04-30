@@ -2,16 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
-import ProjectGrid from "../components/projectGrid"
-import Spacer from "../components/spacer"
+import ProjectFeed from "../components/projectFeed"
 
-export default function ProjectPage({data}) {
+export default function IndexPage({data}) {
   var projects = data.projects
   return (
-    <Layout>
-      <Spacer />
-      <ProjectGrid projects={projects.edges} />
-      <Spacer />
+    <Layout preloader>
+      <ProjectFeed projects={projects.edges} />
     </Layout>
   )
 }
@@ -28,18 +25,12 @@ export const query = graphql`
             image {
               gatsbyImageData
             }
-            imageGallery {
-              gatsbyImageData
-            }
             backgroundColor {
               rgb
             }
             background {
               gatsbyImageData
             }
-            description
-            designCredit
-            year
           }
         }
       }

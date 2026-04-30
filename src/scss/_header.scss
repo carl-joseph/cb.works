@@ -5,13 +5,10 @@
 .logo--main {
 	width: 75px;
 	aspect-ratio: 73/18;
-	background-image: url('../images/logo.svg');
+	background-image: url('../images/logo-100.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
-	&.alt {
-		background-image: url('../images/logo-100.svg');	
-	}
 }
 
 .masthead {
@@ -19,7 +16,5 @@
 	left: 0px;
 	width: 100%;
 	position: fixed;
-	mix-blend-mode: difference;
 	z-index: 10;
-	color: #fff;
 }

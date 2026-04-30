@@ -38,6 +38,10 @@ a {
   color:#000;
 }
 
+.grey {
+  color:#b5b5b5;
+}
+
 /* ------------ Grid Styles ------------ */
 
 .grid {
@@ -70,6 +74,10 @@ a {
 
 .align-center {
   align-items: center;
+}
+
+.align-top {
+  align-items: flex-start;
 }
 
 .justify-center {
@@ -228,6 +236,10 @@ div.bg-image,
 
 .w-80 {
   width: 80%;
+}
+
+.w-90 {
+  width: 90%;
 }
 
 .w-100 {

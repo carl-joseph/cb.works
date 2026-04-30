@@ -5,13 +5,11 @@ import Layout from "../components/layout"
 import ProjectGrid from "../components/projectGrid"
 import Spacer from "../components/spacer"
 
-export default function ProjectPage({data}) {
+export default function EnquiryPage({data}) {
   var projects = data.projects
   return (
     <Layout>
-      <Spacer />
-      <ProjectGrid projects={projects.edges} />
-      <Spacer />
+       
     </Layout>
   )
 }
@@ -24,7 +22,7 @@ export const query = graphql`
         edges {
           node {
             title
-            slug
+            link
             image {
               gatsbyImageData
             }
