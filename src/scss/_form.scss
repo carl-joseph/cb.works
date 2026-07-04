@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+## Form Styling
+--------------------------------------------------------------*/
+
+.input {
+	background-color: #f3f3f3;
+	color:rgba(0,0,0,.7);
+	padding: 5px;
+	&::placeholder {
+		color:rgba(0,0,0,.3);
+	}
+}
+
+textarea {
+	min-height: 150px;
+}
+
+.submit-button {
+	color: #fff;
+	display: flex;
+	background-color: #2C2C2C;
+	&:after {
+		content:'';
+		width:10px;
+		aspect-ratio: 1;
+		margin-left: auto;
+		display: inline-block;
+		background-image: url('../images/arrow-100.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+	&:hover {
+		background-color: #000;
+	}
+}

@@ -38,7 +38,7 @@ const Preview = ({ gallery }) => {
 
 const Contact = ({information}) => {
   return (
-    <div className='grid grid-2 m-col-1'>
+    <div className='grid grid-2 m-col-1 gap-15'>
       <div className='flex flex-col gap-15'>
         <p className='sm-copy'>Project Enquiries</p>
         <Form />

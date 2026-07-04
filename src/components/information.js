@@ -44,7 +44,7 @@ const Content = ({information}) => {
               <div><span className='mr5'>{process.title}:</span><span className='op-50'>{process.content}</span></div>
             ))}
           </div>
-          <p className='sm-copy op-50 mt10 button'>Request Full Process Doc</p>
+          <p className='sm-copy op-50 mt10 button'>Request Full Process</p>
         </div>
       </div>
       <div className='grid grid-2'>
@@ -73,7 +73,7 @@ const Content = ({information}) => {
 }
 
 
-const names = ["Carl", "Mary", "Aru", "Calvin"]
+const names = ["The team", "Carl", "Mary", "Aru", "Calvin"]
 
 const Team = ({ join }) => {
   const [text, setText] = useState("")

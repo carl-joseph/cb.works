@@ -21,7 +21,7 @@ const Project = ({project, index}) => {
       </div>
       <div className='grid gap-10'>
         <div className='flex gap-5 sm-copy black'>
-          <p>0.{index} {project.title}</p>
+          <p>{index}. {project.title}</p>
           {( project.link ? <><span className='grey'>/</span><a className='link-gr' target='_blank' rel='noreferrer' href={project.link}>Visit Site</a></>:'')}
         </div>
         <div className='op-50 w-90'>
