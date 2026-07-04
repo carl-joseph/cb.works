@@ -42,20 +42,32 @@ a {
   color:#b5b5b5;
 }
 
+.white-space {
+  white-space: break-spaces;
+}
+
 /* ------------ Grid Styles ------------ */
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 10px;
 }
 
 .center-grids {
   grid-template-columns: 1fr auto 1fr;
 }
 
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .grid-4 {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-1-2 {
+  grid-template-columns: 1fr 2fr;
 }
 
 /* ------------ Flex Styles ------------ */
@@ -98,12 +110,20 @@ a {
   gap: 10px;
 }
 
+.gap-15 {
+  gap: 15px;
+}
+
 .gap-20 {
   gap: 20px;
 }
 
 .gap-40 {
   gap: 40px;
+}
+
+.row-130 {
+  grid-row-gap: 130px;
 }
 
 .row-150 {
@@ -142,6 +162,14 @@ a {
 
 .mth {
   margin-top: 58px;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.mt10 {
+  margin-top: 10px;
 }
 
 /* ------------ Padding Styles ------------ */
@@ -185,6 +213,10 @@ a {
   background-color: #F4F3F1;
 }
 
+.bg-grey-100 {
+  background-color: rgba(0,0,0,.1);
+}
+
 /* ------------ Image Styles ------------ */
 
 div.bg-image,
@@ -201,6 +233,12 @@ div.bg-image,
 
 .spacer {
   height: 100px;
+  &.x2 {
+    height: 200px;
+    @media (max-width: 768px) {
+      height: 100px;
+    }
+  }
 }
 
 /* ------------ Ratio Styles ------------ */
@@ -213,6 +251,11 @@ div.bg-image,
 .ratio-1-2 {
   width: 100%;
   aspect-ratio: 1 / 2;
+}
+
+.ratio-3-4 {
+  width: 100%;
+  aspect-ratio: 3 / 4;
 }
 
 .ratio-2-1 {
@@ -258,6 +301,26 @@ div.bg-image,
 
 /* ------------ Max Styles ------------ */
 
+.max-225 {
+  max-width: 225px;
+}
+
+.max-250 {
+  max-width: 250px;
+}
+
+.max-275 {
+  max-width: 275px;
+}
+
+.max-300 {
+  max-width: 300px;
+}
+
+.max-450 {
+  max-width: 450px;
+}
+
 .max-550 {
   max-width: 550px;
 }
@@ -294,5 +357,23 @@ div.bg-image,
 .m-100 {
   @media (max-width: 768px) {
     width: 100%;
+  }
+}
+
+.m-col-1 {
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.m-gap-40 {
+  @media (max-width: 768px) {
+    gap: 40px;
+  }
+}
+
+.m-mwa {
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 }

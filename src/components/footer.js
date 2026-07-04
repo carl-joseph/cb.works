@@ -14,7 +14,7 @@ export default function Footer() {
 const Copyright = () => {
   return (
     <div className='op-50'>
-      ©{new Date().getFullYear()} CB WORKS, ALL RIGHTS RESERVED
+      ⚲ Brisbane, Australia
     </div>
   )
 }

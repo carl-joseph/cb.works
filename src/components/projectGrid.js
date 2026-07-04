@@ -15,9 +15,9 @@ const Project = ({project, index}) => {
   return (
     <div className='project flex flex-col gap-10'>
       <div className='grid gap-10'>
-        <Media image={project.image} title={project.title} />
-        <Media image={project.imageGallery[0]} title={project.title} />
-        <Media image={project.imageGallery[1]} title={project.title} />
+        {project.imageGallery.map((image, index) => (
+          <Media image={image} title={project.title} key={index} />
+        ))}
       </div>
       <div className='grid gap-10'>
         <div className='flex gap-5 sm-copy black'>

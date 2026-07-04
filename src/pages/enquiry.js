@@ -2,14 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
-import ProjectGrid from "../components/projectGrid"
+import Enquiry from "../components/enquiry"
 import Spacer from "../components/spacer"
 
 export default function EnquiryPage({data}) {
-  var projects = data.projects
+  var information = data.information
   return (
     <Layout>
-       
+      <Spacer className='x2' />
+      <Enquiry information={information} />
     </Layout>
   )
 }
@@ -17,29 +18,15 @@ export default function EnquiryPage({data}) {
 export const Head = () => <Seo title='' />
 
 export const query = graphql`
-    query PageQuery {
-      projects:allDatoCmsProject(sort: {position: ASC }) {
-        edges {
-          node {
-            title
-            link
-            image {
-              gatsbyImageData
-            }
-            imageGallery {
-              gatsbyImageData
-            }
-            backgroundColor {
-              rgb
-            }
-            background {
-              gatsbyImageData
-            }
-            description
-            designCredit
-            year
-          }
-        }
+  query PageQuery {
+    information:datoCmsInformation {
+      contact {
+        link
+        title
       }
-    }       
+      previews {
+        gatsbyImageData
+      }
+    }
+  }       
 `

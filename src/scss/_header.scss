@@ -18,3 +18,16 @@
 	position: fixed;
 	z-index: 10;
 }
+
+.masthead .information {
+	height: auto;
+  	overflow: hidden;
+ 	transition: height 0.65s ease;
+ 	.internal {
+ 		opacity: 0;
+  		transition: opacity 0.5s ease;
+  		&.is-open {
+  			opacity: 1;
+  		}
+ 	}
+}

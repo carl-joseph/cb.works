@@ -8,10 +8,10 @@ import Spacer from "../components/spacer"
 export default function ProjectPage({data}) {
   var projects = data.projects
   return (
-    <Layout>
-      <Spacer />
+    <Layout homepage>
+      <Spacer className='x2' />
       <ProjectGrid projects={projects.edges} />
-      <Spacer />
+      <Spacer className='x2' />
     </Layout>
   )
 }
@@ -25,16 +25,7 @@ export const query = graphql`
           node {
             link
             title
-            image {
-              gatsbyImageData
-            }
             imageGallery {
-              gatsbyImageData
-            }
-            backgroundColor {
-              rgb
-            }
-            background {
               gatsbyImageData
             }
             description
