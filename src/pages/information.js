@@ -15,7 +15,7 @@ export default function InformationPage({data}) {
   )
 }
 
-export const Head = () => <Seo title='' />
+export const Head = () => <Seo title='Information' />
 
 export const query = graphql`
     query PageQuery {
