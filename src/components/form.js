@@ -17,7 +17,7 @@ class EnquiryForm extends React.Component {
     e.preventDefault()
     let myForm = document.getElementById("contact")
     let formData = new FormData(myForm)
-    if(formData.get('Full Name') && formData.get('Email')){
+    if(formData.get('Name') && formData.get('Email')){
       console.log('test fetch')
       fetch("/", {
         method: "POST",

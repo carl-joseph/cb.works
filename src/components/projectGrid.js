@@ -3,7 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function Grid({ projects }) {
   return (
-    <div className='p20 mth flex flex-col gap-20 row-150'>
+    <div className='p20 mth m-m0 flex flex-col gap-20 row-150'>
       {projects.map((project, index) => (
         <Project project={project.node} index={index+1} key={index} />
       ))}
@@ -14,12 +14,12 @@ export default function Grid({ projects }) {
 const Project = ({project, index}) => {
   return (
     <div className='project flex flex-col gap-10'>
-      <div className='grid gap-10'>
+      <div className='grid gap-10 m-col-1'>
         {project.imageGallery.map((image, index) => (
           <Media image={image} title={project.title} key={index} />
         ))}
       </div>
-      <div className='grid gap-10'>
+      <div className='grid gap-10 m-col-1'>
         <div className='flex gap-5 sm-copy black'>
           <p>{index}. {project.title}</p>
           {( project.link ? <><span className='grey'>/</span><a className='link-gr' target='_blank' rel='noreferrer' href={project.link}>Visit Site</a></>:'')}

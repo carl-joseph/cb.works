@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Form from "../components/form"
+import { Link } from "gatsby"
 
 export default function Enquiry({ information }) {
   return (
-    <div className='p20 grid grid-1-2 m-col-1'>
+    <div className='p20 grid grid-1-2 m-col-1 m-gap-40'>
       <Preview gallery={information.previews}  />
       <Contact information={information} />
     </div>
@@ -23,15 +24,17 @@ const Preview = ({ gallery }) => {
 
   return (
     <div>
-      <div className="max-300 flex flex-col gap-15">
-        <div style={{height:'14.5px'}} />
-        <div className="bg-grey flex ratio-1-1">
-          <div className="project-media bg-grey-100 ratio-8-5 pos-rel">
-            {gallery.map((image, index) => (
-              <GatsbyImage key={image.id || index} image={image.gatsbyImageData} className={`bg-image preview-image ${index === active ? "active z-2" : ""}`}alt={image.title || ""} />
-            ))}
+      <div className="max-300 m-max-150 flex flex-col gap-15">
+        <div className='m-hide' style={{height:'14.5px'}} />
+        <Link to='/'>
+          <div className="bg-grey flex ratio-1-1">
+            <div className="project-media bg-grey-100 ratio-8-5 pos-rel">
+              {gallery.map((image, index) => (
+                <GatsbyImage key={image.id || index} image={image.gatsbyImageData} className={`bg-image preview-image ${index === active ? "active z-2" : ""}`}alt={image.title || ""} />
+              ))}
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   )

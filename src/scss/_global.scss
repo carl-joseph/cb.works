@@ -239,9 +239,6 @@ div.bg-image,
   height: 100px;
   &.x2 {
     height: 200px;
-    @media (max-width: 768px) {
-      height: 100px;
-    }
   }
 }
 
@@ -370,14 +367,32 @@ div.bg-image,
   }
 }
 
+.m-col-2 {
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .m-gap-40 {
   @media (max-width: 768px) {
     gap: 40px;
   }
 }
 
+.m-max-150 {
+  @media (max-width: 768px) {
+    max-width: 150px;
+  }
+}
+
 .m-mwa {
   @media (max-width: 768px) {
     max-width: 100%;
+  }
+}
+
+.m-m0 {
+  @media (max-width: 768px) {
+    margin: 0px;
   }
 }
