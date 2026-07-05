@@ -8,7 +8,7 @@ import Spacer from "../components/spacer"
 export default function EnquiryPage({data}) {
   var information = data.information
   return (
-    <Layout>
+    <Layout enquiry> 
       <Spacer className='x2' />
       <Enquiry information={information} />
     </Layout>

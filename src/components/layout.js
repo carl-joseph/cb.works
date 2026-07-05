@@ -13,10 +13,10 @@ const SCROLL_OPTIONS = {
   smoothTouch: false,
 }
 
-export default function Layout({ children, homepage }) {
+export default function Layout({ children, homepage, enquiry }) {
   return (
     <ReactLenis root options={SCROLL_OPTIONS}>
-      <Header homepage={homepage} />
+      <Header enquiry={enquiry} homepage={homepage} />
       <main>{children}</main>
       {( homepage ? <Footer />:'')}
     </ReactLenis>

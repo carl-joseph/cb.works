@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 
-export default function Header({homepage}) {
+export default function Header({homepage, enquiry}) {
   const infoRef = useRef(null)
   const innerRef = useRef(null)
   const [open, setOpen] = useState(true)
@@ -30,7 +30,7 @@ export default function Header({homepage}) {
         </div>
         {( homepage ? <Information open={open} infoRef={infoRef} innerRef={innerRef} />:<Link className='button' to='/'>Go Back</Link>)}
         <div className='flex'>
-          <Link className='mla button' to='/enquiry'>Project Enquiry</Link>
+          {enquiry ? (<Link className='mla button' to='/information'>Information</Link>):(<Link className='mla button' to='/enquiry'>Project Enquiry</Link>)}
         </div>
       </div>
     </header>

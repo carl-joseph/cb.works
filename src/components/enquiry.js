@@ -23,7 +23,8 @@ const Preview = ({ gallery }) => {
 
   return (
     <div>
-      <div className="max-275">
+      <div className="max-300 flex flex-col gap-15">
+        <div style={{height:'14.5px'}} />
         <div className="bg-grey flex ratio-1-1">
           <div className="project-media bg-grey-100 ratio-8-5 pos-rel">
             {gallery.map((image, index) => (
