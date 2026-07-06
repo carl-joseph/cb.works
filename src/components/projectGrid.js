@@ -40,10 +40,12 @@ const Project = ({project, index}) => {
 const Media = ({ image, title }) => {
   const img = image?.gatsbyImageData
   const isPortrait = img ? img.height > img.width : false
+  const video = image.customData.video; 
   return (
     <div className='bg-grey ratio-1-1 flex pos-rel'>
         <div className={`project-media bg-grey pos-rel z-2 ${isPortrait ? "ratio-9-19 portrait" : "ratio-8-5"}`}>
           {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt={title || ""} /> : ""}
+          {video ? <video src={video} playsInline autoPlay muted loop className='bg-image' />:''}
         </div>
     </div>
   )
