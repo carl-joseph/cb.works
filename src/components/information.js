@@ -47,7 +47,7 @@ const Content = ({information}) => {
           <p className='sm-copy op-50 mt10 button'>Request Full Process</p>
         </div>
       </div>
-      <div className='grid grid-2'>
+      <div className='grid grid-2 m-col-1 m-gap-40'>
         <div className='flex flex-col gap-15'>
           <p className='sm-copy'>Capabilities</p>
           <div className='max-450 white-space op-50'>{information.capabilities}</div>
@@ -57,7 +57,7 @@ const Content = ({information}) => {
           <div className='max-450 white-space op-50'>{information.ethos}</div>
         </div>
       </div>
-      <div className='grid grid-2'>
+      <div className='grid grid-2 m-col-1 m-gap-40'>
         <Team join={information.join} />
         <div className='flex flex-col gap-15'>
           <p className='sm-copy'>Contact</p>
