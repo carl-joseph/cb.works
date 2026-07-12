@@ -6,7 +6,7 @@ import "swiper/css"
 
 export default function Grid({ projects }) {
   return (
-    <div className='p20 mth m-m0 flex flex-col gap-20 row-150 m-p0'>
+    <div className='p20 mth m-m0 flex flex-col gap-20 row-150 m-pr0 m-pl0'>
       {projects.map((project, index) => (
         <Project project={project.node} index={index+1} key={index} />
       ))}
@@ -17,14 +17,14 @@ export default function Grid({ projects }) {
 const Project = ({project, index}) => {
   return (
     <div className='project flex flex-col gap-10'>
-      <Swiper className='project-gallery' slidesOffsetBefore={20} slidesOffsetAfter={20} slidesPerView={1.08} spaceBetween={10} breakpoints={{ 768: { slidesPerView: 3, slidesOffsetBefore: 0, slidesOffsetAfter: 0, enabled: false } }}>
+      <Swiper className='project-gallery' slidesPerView={1.1} slidesOffsetBefore={20} slidesOffsetAfter={20} spaceBetween={10} breakpoints={{ 768: { slidesPerView: 3, slidesOffsetBefore: 0, slidesOffsetAfter: 0, enabled: false } }}>
         {project.imageGallery.map((image, index) => (
           <SwiperSlide key={image.id || index}>
             <Media image={image} title={project.title} />
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className='grid gap-10 m-col-1 m-p20 m-pt10'>
+      <div className='grid gap-10 m-col-1 m-pr20 m-pl20'>
         <div className='flex gap-5 sm-copy black'>
           <p>{index}. {project.title}</p>
           {( project.link ? <><span className='grey'>/</span><a className='link-gr' target='_blank' rel='noreferrer' href={project.link}>Visit Site</a></>:'')}
