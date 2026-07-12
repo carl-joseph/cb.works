@@ -1,9 +1,12 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+
 
 export default function Grid({ projects }) {
   return (
-    <div className='p20 mth m-m0 flex flex-col gap-20 row-150'>
+    <div className='p20 mth m-m0 flex flex-col gap-20 row-150 m-pr0'>
       {projects.map((project, index) => (
         <Project project={project.node} index={index+1} key={index} />
       ))}
@@ -14,12 +17,14 @@ export default function Grid({ projects }) {
 const Project = ({project, index}) => {
   return (
     <div className='project flex flex-col gap-10'>
-      <div className='grid gap-10 m-col-1'>
+      <Swiper className='project-gallery' slidesPerView={1.08} spaceBetween={10} breakpoints={{ 768: { slidesPerView: 3, enabled: false } }}>
         {project.imageGallery.map((image, index) => (
-          <Media image={image} title={project.title} key={index} />
+          <SwiperSlide key={image.id || index}>
+            <Media image={image} title={project.title} />
+          </SwiperSlide>
         ))}
-      </div>
-      <div className='grid gap-10 m-col-1'>
+      </Swiper>
+      <div className='grid gap-10 m-col-1 m-pr20'>
         <div className='flex gap-5 sm-copy black'>
           <p>{index}. {project.title}</p>
           {( project.link ? <><span className='grey'>/</span><a className='link-gr' target='_blank' rel='noreferrer' href={project.link}>Visit Site</a></>:'')}

@@ -407,3 +407,15 @@ div.bg-image,
     margin: 0px;
   }
 }
+
+.m-pr0 {
+  @media (max-width: 768px) {
+    padding-right: 0px;
+  }
+}
+
+.m-pr20 {
+  @media (max-width: 768px) {
+    padding-right: 20px;
+  }
+}
