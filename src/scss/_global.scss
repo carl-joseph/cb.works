@@ -244,7 +244,7 @@ div.bg-image,
   &.x2 {
     height: 200px;
     @media (max-width: 768px) {
-      height: 100px;
+      height: 150px;
     }
   }
 }
@@ -432,5 +432,12 @@ div.bg-image,
 .m-pl20 {
   @media (max-width: 768px) {
     padding-left: 20px;
+  }
+}
+
+.m-col-reverse {
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }

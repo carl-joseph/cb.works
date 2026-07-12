@@ -8,6 +8,7 @@ export default function Enquiry({ information }) {
     <div className='p20 grid grid-1-2 m-col-1 m-gap-40'>
       <Preview gallery={information.previews}  />
       <Contact information={information} />
+      <div style={{height:'60px'}} className='m-show'/>
     </div>
   )
 }
@@ -42,7 +43,7 @@ const Preview = ({ gallery }) => {
 
 const Contact = ({information}) => {
   return (
-    <div className='grid grid-2 m-col-1 gap-15'>
+    <div className='grid grid-2 m-col-1 gap-15 m-col-reverse m-gap-40'>
       <div className='flex flex-col gap-15'>
         <p className='sm-copy'>Project Enquiries</p>
         <Form />

@@ -3,9 +3,10 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function Information({ information }) {
   return (
-    <div className='p20 grid grid-1-2 m-col-1'>
+    <div className='p20 grid grid-1-2 m-col-1 m-gap-40'>
       <Profile image={information.image} video={information.video} />
       <Content information={information} />
+      <div style={{height:'60px'}} className='m-show'/>
     </div>
   )
 }
