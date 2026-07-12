@@ -243,6 +243,9 @@ div.bg-image,
   height: 100px;
   &.x2 {
     height: 200px;
+    @media (max-width: 768px) {
+      height: 100px;
+    }
   }
 }
 
