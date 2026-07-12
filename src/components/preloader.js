@@ -8,7 +8,7 @@ export default function Preloader() {
 
   return (
     <div className='preloader flex'>
-      <div className='ma flex gap-30 m-gap-15 align-center'>
+      <div className='ma flex gap-20 m-gap-15 align-center'>
         <div className='logo--main large'/>
         <div className='overflow'><p className='sm-copy caption op-50'>A Web development practice</p></div>
       </div>

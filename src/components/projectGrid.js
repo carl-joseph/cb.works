@@ -15,28 +15,47 @@ export default function Grid({ projects }) {
 }
 
 const Project = ({project, index}) => {
+  var projectIndex = index;
   return (
     <div className='project flex flex-col gap-10'>
-      <Swiper className='project-gallery' slidesPerView={1.1} slidesOffsetBefore={20} slidesOffsetAfter={20} spaceBetween={10} breakpoints={{ 768: { slidesPerView: 3, slidesOffsetBefore: 0, slidesOffsetAfter: 0, enabled: false } }}>
+      <Swiper className='project-gallery' slidesPerView={1.15} slidesOffsetBefore={20} slidesOffsetAfter={20} spaceBetween={10} breakpoints={{ 768: { slidesPerView: 3, slidesOffsetBefore: 0, slidesOffsetAfter: 0, enabled: false } }}>
         {project.imageGallery.map((image, index) => (
           <SwiperSlide key={image.id || index}>
-            <Media image={image} title={project.title} />
+            <div className='flex flex-col gap-10'>
+              <Media image={image} title={project.title} />
+              {( index === 0 ? <Title title={project.title} index={projectIndex} link={project.link} />:'' )}
+              {( index === 1 ? <Description description={project.description} />:'' )}
+              {( index === 2 ? <Credit credit={project.designCredit} year={project.year} />:'' )}
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className='grid gap-10 m-col-1 m-pr20 m-pl20'>
-        <div className='flex gap-5 sm-copy black'>
-          <p>{index}. {project.title}</p>
-          {( project.link ? <><span className='grey'>/</span><a className='link-gr' target='_blank' rel='noreferrer' href={project.link}>Visit Site</a></>:'')}
-        </div>
-        <div className='op-50 w-90'>
-          {project.description}
-        </div>
-        <div className='flex op-50 space-between'>
-          <p>{project.designCredit}</p>
-          <p>{project.year}</p>
-        </div>
-      </div>
+    </div>
+  )
+} 
+
+const Title = ({title, index, link}) => {
+  return (
+    <div className='flex gap-5 sm-copy black'>
+      <p>{index}. {title}</p>
+      {( link ? <><span className='grey'>/</span><a className='link-gr' target='_blank' rel='noreferrer' href={link}>Visit Site</a></>:'')}
+    </div>
+  )
+}
+
+const Description = ({description}) => {
+  return (
+    <div className='op-50 w-90 m-100'>
+      {description}
+    </div>
+  )
+}
+
+const Credit = ({year, credit}) => {
+  return (
+    <div className='flex op-50 space-between'>
+      <p>{credit}</p>
+      <p>{year}</p>
     </div>
   )
 }
