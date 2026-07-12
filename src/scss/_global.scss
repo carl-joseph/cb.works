@@ -408,14 +408,20 @@ div.bg-image,
   }
 }
 
-.m-pr0 {
+.m-p0 {
   @media (max-width: 768px) {
-    padding-right: 0px;
+    padding: 0px;
   }
 }
 
-.m-pr20 {
+.m-p20 {
   @media (max-width: 768px) {
-    padding-right: 20px;
+    padding: 20px;
+  }
+}
+
+.m-pt10 {
+  @media (max-width: 768px) {
+    padding-top: 10px;
   }
 }
