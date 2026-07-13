@@ -21,14 +21,14 @@ export default function Header({homepage, enquiry}) {
       : "0px"
   }, [open])
   return (
-    <header className='masthead' onMouseOver={() => setOpen(true)} onMouseLeave={() => window.scrollY !== 0 && setOpen(false)}>
+    <header className='masthead'>
       <div className='grid m-col-2 p20 sm-copy align-top'>
         <div>
           <Link className='link' to='/'>
             <div className='logo--main'/>
           </Link>
         </div>
-        <div className='m-hide'>
+        <div className='m-hide' onMouseOver={() => setOpen(true)} onMouseLeave={() => window.scrollY !== 0 && setOpen(false)}>
           {( homepage ? <Information open={open} infoRef={infoRef} innerRef={innerRef} />:<Link className='button' to='/'>Go Back</Link>)}
         </div>
         <div className='flex'>
