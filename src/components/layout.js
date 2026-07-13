@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "./header"
 import { ReactLenis } from "lenis/react"
+import PageTransition from "./pageTransition"
 import Preloader from "./preloader"
 import Footer from "./footer"
 import "../scss/site.scss"
@@ -14,13 +15,15 @@ const SCROLL_OPTIONS = {
   smoothTouch: false,
 }
 
-export default function Layout({ children, homepage, enquiry }) {
+export default function Layout({ children, homepage, footer, enquiry }) {
   return (
     <ReactLenis root options={SCROLL_OPTIONS}>
       {( homepage ? <Preloader />:'')}
       <Header enquiry={enquiry} homepage={homepage} />
-      <main>{children}</main>
-      {( homepage ? <Footer />:'')}
+      <PageTransition>
+        <main>{children}</main>
+        {( footer ? <Footer />:'')}
+      </PageTransition>
     </ReactLenis>
   )
 }

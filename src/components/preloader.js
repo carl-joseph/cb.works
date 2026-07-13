@@ -3,7 +3,11 @@ import gsap from "gsap"
 
 export default function Preloader() {
   useEffect(() => {
-    gsap.to(".preloader", { opacity: 0, duration: 1, delay: 1.5, onComplete: () => gsap.set(".preloader", { display: "none" }) })
+    if (document.body.classList.contains("site-loaded")) {
+      gsap.set(".preloader", { display: "none" })
+    } else {
+      gsap.to(".preloader", { opacity: 0, duration: 1, delay: 1.5, onComplete: () => {gsap.set(".preloader", { display: "none" }); document.body.classList.add("site-loaded") }})
+    }
   }, [])
 
   return (

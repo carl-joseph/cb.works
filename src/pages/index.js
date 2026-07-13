@@ -8,7 +8,7 @@ import Spacer from "../components/spacer"
 export default function ProjectPage({data}) {
   var projects = data.projects
   return (
-    <Layout homepage>
+    <Layout homepage footer>
       <Spacer className='x2' />
       <ProjectGrid projects={projects.edges} />
       <Spacer className='x2' />
