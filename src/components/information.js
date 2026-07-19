@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 export default function Information({ information }) {
   return (
@@ -13,8 +14,9 @@ export default function Information({ information }) {
 
 const Profile = ({image, video}) => {
   return (
-    <div>
-      <div className='max-275 m-max-150'>
+    <div className='flex flex-col gap-15'>
+      <div className='m-hide' style={{height:'14.5px'}} />
+      <div className='max-250 m-max-150'>
         <div className='ratio-3-4 bg-grey pos-rel'>
           {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt='CB Works' /> : ""}
           {( video ? <video src={video} muted playsInline autoPlay loop className='bg-image' />:'')}
@@ -45,7 +47,7 @@ const Content = ({information}) => {
               <div><span className='mr5'>{process.title}:</span><span className='op-50'>{process.content}</span></div>
             ))}
           </div>
-          <p className='sm-copy op-50 mt10 button'>Request Full Process</p>
+          <Link to='/enquiry' className='sm-copy op-50 mt10 button'>Request Full Process</Link>
         </div>
       </div>
       <div className='grid grid-2 m-col-1 m-gap-40'>
@@ -64,7 +66,7 @@ const Content = ({information}) => {
           <p className='sm-copy'>Contact</p>
           <div className='max-450 flex flex-col'>
             {information.contact.map((link, index) => (
-              <a className='sm-copy link-gr mra' href={link.link}>{link.title}</a>
+              <a className=' link-gr mra' target='_blank' rel='noreferrer' href={link.link}>{link.title}</a>
             ))}
           </div>
         </div>
