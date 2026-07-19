@@ -43,9 +43,6 @@ class EnquiryForm extends React.Component {
   }
   render() {
     const formSubmitted = this.state.formSubmitted
-    const closeMenu = () => {
-      document.body.classList.remove('menu-open');
-    }
     if(!formSubmitted){
     return (
       <form method="POST" data-netlify="true" id="contact" className="contact--form flex flex-col gap-5">
@@ -62,7 +59,7 @@ class EnquiryForm extends React.Component {
     )} else {
       return (
       <div className="thank-you" id="thank-you">
-        <p>THank you for your enquiry. We’ll be in touch shortly.</p>
+        <p>Thank you for your enquiry. We’ll be in touch shortly.</p>
       </div>
       )
     }
