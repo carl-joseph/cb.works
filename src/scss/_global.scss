@@ -244,7 +244,7 @@ div.bg-image,
   &.x2 {
     height: 200px;
     @media (max-width: 768px) {
-      height: 150px;
+      height: 100px;
     }
   }
 }
@@ -381,6 +381,12 @@ div.bg-image,
   }
 }
 
+.m-gap-0 {
+  @media (max-width: 768px) {
+    gap: 0px;
+  }
+}
+
 .m-gap-15 {
   @media (max-width: 768px) {
     gap: 15px;
@@ -402,6 +408,12 @@ div.bg-image,
 .m-mwa {
   @media (max-width: 768px) {
     max-width: 100%;
+  }
+}
+
+.m-ma {
+  @media (max-width: 768px) {
+    margin: auto;
   }
 }
 

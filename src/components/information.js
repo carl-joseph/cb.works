@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
+import Spacer from "../components/spacer"
 import { Link } from "gatsby"
 
 export default function Information({ information }) {
   return (
-    <div className='p20 grid grid-1-2 m-col-1 m-gap-40'>
+    <div className='p20 grid grid-1-2 m-col-1 m-gap-0'>
       <Profile image={information.image} video={information.video} />
       <Content information={information} />
-      <div style={{height:'60px'}} className='m-show'/>
+      <div style={{height:'100px'}} className='m-show'/>
     </div>
   )
 }
 
 const Profile = ({image, video}) => {
   return (
-    <div className='flex flex-col gap-15'>
+    <div className='flex flex-col gap-15 m-gap-0'>
       <div className='m-hide' style={{height:'14.5px'}} />
-      <div className='max-250 m-max-150'>
+      <div className='max-250 m-max-150 m-100 m-ma'>
         <div className='ratio-3-4 bg-grey pos-rel'>
           {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt='CB Works' /> : ""}
           {( video ? <video src={video} muted playsInline autoPlay loop className='bg-image' />:'')}
         </div>
       </div>
+      <Spacer className='m-show' />
     </div>
   )
 }
@@ -38,8 +40,8 @@ const Studio = ({information, className}) => {
 const Content = ({information}) => {
   return (
     <div className='flex flex-col row-130 m-gap-40'>
-      <div className='grid grid-2 m-col-1'>
-        <Studio className='m-hide' information={information.studio} />
+      <div className='grid grid-2 m-col-1 m-gap-40'>
+        <Studio  information={information.studio} />
         <div className='flex flex-col gap-15'>
           <p className='sm-copy'>Process</p>
           <div className='max-450 flex flex-col gap-15'> 

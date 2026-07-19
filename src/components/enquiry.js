@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
+import Spacer from "../components/spacer"
 import Form from "../components/form"
 import { Link } from "gatsby"
 
 export default function Enquiry({ information }) {
   return (
-    <div className='p20 grid grid-1-2 m-col-1 m-gap-40'>
+    <div className='p20 grid grid-1-2 m-col-1 m-gap-0'>
       <Preview gallery={information.previews}  />
       <Contact information={information} />
-      <div style={{height:'60px'}} className='m-show'/>
+      <div style={{height:'100px'}} className='m-show'/>
     </div>
   )
 }
@@ -25,7 +26,7 @@ const Preview = ({ gallery }) => {
 
   return (
     <div>
-      <div className="max-250 m-max-150 flex flex-col gap-15">
+      <div className="max-250 m-max-150 m-ma flex flex-col gap-15 m-gap-0">
         <div className='m-hide' style={{height:'14.5px'}} />
         <Link to='/'>
           <div className="bg-grey flex ratio-3-4">
@@ -36,6 +37,7 @@ const Preview = ({ gallery }) => {
             </div>
           </div>
         </Link>
+        <Spacer className='m-show' />
       </div>
     </div>
   )
@@ -43,7 +45,7 @@ const Preview = ({ gallery }) => {
 
 const Contact = ({information}) => {
   return (
-    <div className='grid grid-2 m-col-1 gap-15 m-col-reverse m-gap-40'>
+    <div className='grid grid-2 m-col-1 gap-15 m-gap-40'>
       <div className='flex flex-col gap-15'>
         <p className='sm-copy'>Project Enquiries</p>
         <Form />
