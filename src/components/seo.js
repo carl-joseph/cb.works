@@ -22,6 +22,7 @@ export default function Seo({ description, title, children }) {
   return (
     <>
       <title>{title ? `${title} | ${defaultTitle}` : defaultTitle}</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
       <meta name='description' content={metaDescription} />
       <meta property='og:title' content={title} />
       <meta property='og:description' content={metaDescription} />
