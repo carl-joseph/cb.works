@@ -26,7 +26,7 @@ const Preview = ({ gallery }) => {
 
   return (
     <div>
-      <div className="max-225 m-max-150 m-ma flex flex-col gap-15 m-gap-0">
+      <div className="max-225 m-mt60 m-mb40 m-max-150 m-ma flex flex-col gap-15 m-gap-0">
         <div className='m-hide' style={{height:'14.5px'}} />
         <Link to='/'>
           <div className="bg-grey flex ratio-4-5">

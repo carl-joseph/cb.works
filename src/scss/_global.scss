@@ -436,6 +436,18 @@ div.bg-image,
   }
 }
 
+.m-mt60 {
+  @media (max-width: 768px) {
+    margin-top: 60px;
+  }
+}
+
+.m-mb40 {
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
 .m-pr0 {
   @media (max-width: 768px) {
     padding-right: 0px;
@@ -464,5 +476,11 @@ div.bg-image,
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column-reverse;
+  }
+}
+
+.m-align-center {
+  @media (max-width: 768px) {
+    align-items: center;
   }
 }

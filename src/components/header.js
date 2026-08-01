@@ -27,7 +27,7 @@ export default function Header({homepage, enquiry, information}) {
   }, [open])
   return (
     <header className='masthead'>
-      <div className='grid m-col-2 p20 sm-copy align-top'>
+      <div className='grid m-col-2 p20 sm-copy align-top m-align-center'>
         <div>
           <Link className='link' to='/'>
             <div className='logo--main'/>
