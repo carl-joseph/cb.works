@@ -34,10 +34,10 @@ export default function Header({homepage, enquiry, information}) {
           </Link>
         </div>
         <div className='m-hide'>
-          {!information ? <Information open={open} infoRef={infoRef} innerRef={innerRef} onMouseEnter={() => { isHoveringRef.current = true; setOpen(true) }} onMouseLeave={() => { isHoveringRef.current = false; if (window.scrollY >= 10) setOpen(false) }} /> : <Link className='mla button' to='/'>Return</Link>}
+          {!information ? <Information open={open} infoRef={infoRef} innerRef={innerRef} onMouseEnter={() => { isHoveringRef.current = true; setOpen(true) }} onMouseLeave={() => { isHoveringRef.current = false; if (window.scrollY >= 10) setOpen(false) }} /> : <Link className='mla button' to='/'>Return Home</Link>}
         </div>
         <div className='flex m-hide'>
-          {!enquiry ? (<Link className='mla button' to='/enquiry'>Project Enquiry</Link>):(<Link className='mla button' to='/'>Return</Link>)}
+          {!enquiry ? (<Link className='mla button' to='/enquiry'>Project Enquiry</Link>):(<Link className='mla button' to='/'>Return Home</Link>)}
         </div>
         <MobileMenu />
       </div>
