@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react"
 
 export default function Footer() {
+  const [hasScrolled, setHasScrolled] = useState(false)
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 20)
+    }
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
   return (
-    <footer className='colophon'>
+    <footer className={`colophon ${hasScrolled ? "is-visible" : ""}`}>
       <div className='p20 flex space-between sm-copy'>
         <Socials />
         <Information />
