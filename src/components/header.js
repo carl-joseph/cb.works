@@ -36,11 +36,25 @@ export default function Header({homepage, enquiry, information}) {
         <div className='m-hide'>
           {!information ? <Information open={open} infoRef={infoRef} innerRef={innerRef} onMouseEnter={() => { isHoveringRef.current = true; setOpen(true) }} onMouseLeave={() => { isHoveringRef.current = false; if (window.scrollY >= 10) setOpen(false) }} /> : <Link className='mla button' to='/'>Return</Link>}
         </div>
-        <div className='flex'>
+        <div className='flex m-hide'>
           {!enquiry ? (<Link className='mla button' to='/enquiry'>Project Enquiry</Link>):(<Link className='mla button' to='/'>Return</Link>)}
         </div>
+        <MobileMenu />
       </div>
     </header>
+  )
+}
+
+const MobileMenu = () => {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className='m-show mla'>
+      <div className='flex gap-5'>
+        <p className='button' type='button' onClick={() => setOpen(!open)}>{open ? "Close" : "Menu"}</p>
+        {open && <Link to='/information'>Information</Link>}
+        {open && <Link to='/enquiry'>Enquiry</Link>}
+      </div>
+    </div>
   )
 }
 

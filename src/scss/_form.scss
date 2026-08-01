@@ -19,6 +19,7 @@ textarea {
 	color: #fff;
 	display: flex;
 	background-color: #2C2C2C;
+	transition: 0.4s ease background-color;
 	&:after {
 		content:'';
 		width:10px;

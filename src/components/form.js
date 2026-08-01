@@ -59,7 +59,7 @@ class EnquiryForm extends React.Component {
     )} else {
       return (
       <div className="thank-you" id="thank-you">
-        <p>Thank you for your enquiry. We’ll be in touch shortly.</p>
+        <p className='op-50'>Thank you for your enquiry. We’ll be in touch shortly.</p>
       </div>
       )
     }
