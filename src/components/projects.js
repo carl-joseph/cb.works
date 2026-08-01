@@ -17,7 +17,7 @@ export default function Grid({ projects }) {
 const Project = ({project, index}) => {
   var projectIndex = index;
   return (
-    <div className='project flex flex-col gap-10'>
+    <div className='project'>
       <Swiper className='project-gallery' slidesPerView={1.15} slidesOffsetBefore={20} slidesOffsetAfter={20} spaceBetween={10} breakpoints={{ 768: { slidesPerView: 3, slidesOffsetBefore: 0, slidesOffsetAfter: 0, enabled: false } }}>
         {project.imageGallery.map((image, index) => (
           <SwiperSlide key={image.id || index}>

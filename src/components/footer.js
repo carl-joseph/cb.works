@@ -1,20 +1,38 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 export default function Footer() {
   return (
     <footer className='colophon'>
       <div className='p20 flex space-between sm-copy'>
         <Socials />
-        <Copyright />
+        <Information />
       </div>
     </footer>
   )
 }
 
-const Copyright = () => {
+const Information = () => {
+  const [brisbaneTime, setBrisbaneTime] = useState("")
+  useEffect(() => {
+    const updateBrisbaneTime = () => {
+      const parts = new Intl.DateTimeFormat("en-AU", {
+        timeZone: "Australia/Brisbane",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      }).formatToParts(new Date())
+      const hour = parts.find(part => part.type === "hour")?.value
+      const minute = parts.find(part => part.type === "minute")?.value
+      const dayPeriod = parts.find(part => part.type === "dayPeriod")?.value.toLowerCase()
+      setBrisbaneTime(`${hour}:${minute}${dayPeriod}`)
+    }
+    updateBrisbaneTime()
+    const interval = setInterval(updateBrisbaneTime, 60000)
+    return () => clearInterval(interval)
+  }, [])
   return (
     <div className='op-50'>
-      ⚲ Brisbane, Australia
+      ⚲ Brisbane, Aus {brisbaneTime && ` ${brisbaneTime}`}
     </div>
   )
 }

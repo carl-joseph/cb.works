@@ -17,8 +17,8 @@ const Profile = ({image, video}) => {
   return (
     <div className='flex flex-col gap-15 m-gap-0'>
       <div className='m-hide' style={{height:'14.5px'}} />
-      <div className='max-250 m-max-150 m-100 m-ma'>
-        <div className='ratio-3-4 bg-grey pos-rel'>
+      <div className='max-225 m-max-150 m-100 m-ma'>
+        <div className='ratio-4-5 bg-grey pos-rel'>
           {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt='CB Works' /> : ""}
           {( video ? <video src={video} muted playsInline autoPlay loop className='bg-image' />:'')}
         </div>
@@ -39,7 +39,7 @@ const Studio = ({information, className}) => {
 
 const Content = ({information}) => {
   return (
-    <div className='flex flex-col row-130 m-gap-40'>
+    <div className='flex flex-col row-120 m-gap-40'>
       <div className='grid grid-2 m-col-1 m-gap-40'>
         <Studio  information={information.studio} />
         <div className='flex flex-col gap-15'>
@@ -49,7 +49,7 @@ const Content = ({information}) => {
               <div><span className='mr5'>{process.title}:</span><span className='op-50'>{process.content}</span></div>
             ))}
           </div>
-          <Link to='/enquiry' className='sm-copy op-50 mt10 button'>Request Full Process</Link>
+          <Link to='/enquiry' className='sm-copy link-gr mt10 button'>Request Full Process</Link>
         </div>
       </div>
       <div className='grid grid-2 m-col-1 m-gap-40'>
@@ -66,7 +66,7 @@ const Content = ({information}) => {
         <Team join={information.join} />
         <div className='flex flex-col gap-15'>
           <p className='sm-copy'>Contact</p>
-          <div className='max-450 flex flex-col'>
+          <div className='max-450 flex sm-copy flex-col'>
             {information.contact.map((link, index) => (
               <a className=' link-gr mra' target='_blank' rel='noreferrer' href={link.link}>{link.title}</a>
             ))}

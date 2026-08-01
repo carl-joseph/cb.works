@@ -20,10 +20,17 @@
 }
 
 .link-gr {
-	color:#b5b5b5;
+	color:rgba(24,24,24,.5);
 	transition: 0.4s color ease;
+	&:before {
+		opacity: 0.5;
+		transition: 0.4s opacity ease;
+	}
 	&:hover {
 		color: #181818;
+		&:before {
+			opacity: 1;
+		}
 	}
 }
 

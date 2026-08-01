@@ -15,7 +15,7 @@ export default function EnquiryPage({data}) {
   )
 }
 
-export const Head = () => <Seo title='Enquiry' />
+export const Head = () => <Seo title='Project Enquiry' />
 
 export const query = graphql`
   query PageQuery {

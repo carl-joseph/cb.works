@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
-import ProjectGrid from "../components/projectGrid"
+import Projects from "../components/projects"
 import Spacer from "../components/spacer"
 
 export default function ProjectPage({data}) {
@@ -10,7 +10,7 @@ export default function ProjectPage({data}) {
   return (
     <Layout homepage footer>
       <Spacer className='x2' />
-      <ProjectGrid projects={projects.edges} />
+      <Projects projects={projects.edges} />
       <Spacer className='x2' />
     </Layout>
   )

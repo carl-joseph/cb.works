@@ -126,6 +126,10 @@ a {
   gap: 40px;
 }
 
+.row-120 {
+  grid-row-gap: 100px;
+}
+
 .row-130 {
   grid-row-gap: 130px;
 }
@@ -264,6 +268,11 @@ div.bg-image,
 .ratio-3-4 {
   width: 100%;
   aspect-ratio: 3 / 4;
+}
+
+.ratio-4-5 {
+  width: 100%;
+  aspect-ratio: 4/5;
 }
 
 .ratio-2-1 {

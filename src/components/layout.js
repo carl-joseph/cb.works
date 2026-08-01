@@ -15,11 +15,11 @@ const SCROLL_OPTIONS = {
   smoothTouch: false,
 }
 
-export default function Layout({ children, homepage, footer, enquiry }) {
+export default function Layout({ children, homepage, footer, enquiry, information }) {
   return (
     <ReactLenis root options={SCROLL_OPTIONS}>
       {( homepage ? <Preloader />:'')}
-      <Header enquiry={enquiry} homepage={homepage} />
+      <Header enquiry={enquiry} homepage={homepage} information={information} />
       <PageTransition>
         <main>{children}</main>
         {( footer ? <Footer />:'')}

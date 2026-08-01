@@ -1,14 +1,19 @@
 import React, { useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 
-export default function Header({homepage, enquiry}) {
+export default function Header({homepage, enquiry, information}) {
   const infoRef = useRef(null)
   const innerRef = useRef(null)
+  const isHoveringRef = useRef(false)
+
   const [open, setOpen] = useState(true)
   useEffect(() => {
     const handleScroll = () => {
       const isTop = window.scrollY < 10
-      setOpen(isTop)
+
+      if (!isHoveringRef.current) {
+        setOpen(isTop)
+      }
     }
     window.addEventListener("scroll", handleScroll)
     handleScroll()
@@ -17,7 +22,7 @@ export default function Header({homepage, enquiry}) {
   useEffect(() => {
     if (!infoRef.current || !innerRef.current) return
     infoRef.current.style.height = open
-      ? `${innerRef.current.offsetHeight}px`
+      ? `${innerRef.current.scrollHeight}px`
       : "0px"
   }, [open])
   return (
@@ -28,20 +33,20 @@ export default function Header({homepage, enquiry}) {
             <div className='logo--main'/>
           </Link>
         </div>
-        <div className='m-hide' onMouseOver={() => setOpen(true)} onMouseLeave={() => window.scrollY !== 0 && setOpen(false)}>
-          {( homepage ? <Information open={open} infoRef={infoRef} innerRef={innerRef} />:<Link className='button' to='/'>Go Back</Link>)}
+        <div className='m-hide'>
+          {!information ? <Information open={open} infoRef={infoRef} innerRef={innerRef} onMouseEnter={() => { isHoveringRef.current = true; setOpen(true) }} onMouseLeave={() => { isHoveringRef.current = false; if (window.scrollY >= 10) setOpen(false) }} /> : <Link className='mla button' to='/'>Return</Link>}
         </div>
         <div className='flex'>
-          {enquiry ? (<Link className='mla button' to='/information'>Information</Link>):(<Link className='mla button' to='/enquiry'>Project Enquiry</Link>)}
+          {!enquiry ? (<Link className='mla button' to='/enquiry'>Project Enquiry</Link>):(<Link className='mla button' to='/'>Return</Link>)}
         </div>
       </div>
     </header>
   )
 }
 
-const Information = ({ open, infoRef, innerRef }) => {
+const Information = ({ open, infoRef, innerRef, onMouseEnter, onMouseLeave }) => {
   return (
-    <div className='information-wrapper'>
+    <div className='information-wrapper' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <div className='information' ref={infoRef}>
         <div className={`grey internal ${open ? "is-open" : ""}`} ref={innerRef}>
           CB Works is a web practice, led by Carl Beaverson. We partner with leading designers and agencies to produce outstanding websites.

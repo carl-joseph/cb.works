@@ -8,7 +8,7 @@ export default function Enquiry({ information }) {
   return (
     <div className='p20 grid grid-1-2 m-col-1 m-gap-0'>
       <Preview gallery={information.previews}  />
-      <Contact information={information} />
+      <Enquiries information={information} />
       <div style={{height:'100px'}} className='m-show'/>
     </div>
   )
@@ -26,10 +26,10 @@ const Preview = ({ gallery }) => {
 
   return (
     <div>
-      <div className="max-250 m-max-150 m-ma flex flex-col gap-15 m-gap-0">
+      <div className="max-225 m-max-150 m-ma flex flex-col gap-15 m-gap-0">
         <div className='m-hide' style={{height:'14.5px'}} />
         <Link to='/'>
-          <div className="bg-grey flex ratio-3-4">
+          <div className="bg-grey flex ratio-4-5">
             <div className="project-media bg-grey-100 ratio-8-5 pos-rel">
               {gallery.map((image, index) => (
                 <GatsbyImage key={image.id || index} image={image.gatsbyImageData} className={`bg-image preview-image ${index === active ? "active z-2" : ""}`}alt={image.title || ""} />
@@ -43,23 +43,23 @@ const Preview = ({ gallery }) => {
   )
 }
 
-const Contact = ({information}) => {
+const Enquiries = ({information}) => {
   return (
     <div className='grid grid-2 m-col-1 gap-15 m-gap-40'>
       <div className='flex flex-col gap-15'>
         <p className='sm-copy'>Project Enquiries</p>
         <Form />
       </div>
-      <Details contact={information.contact} />
+      <Contact contact={information.contact} />
     </div>
   )
 }
 
-const Details = ({contact}) => {
+export const Contact = ({contact}) => {
   return (
     <div className='flex flex-col gap-15'>
       <p className='sm-copy'>Contact</p>
-      <div className='max-450 flex flex-col'>
+      <div className='max-450 sm-copy flex flex-col'>
         {contact.map((link, index) => (
           <a className='link-gr mra' target='_blank' rel='noreferrer' href={link.link}>{link.title}</a>
         ))}
