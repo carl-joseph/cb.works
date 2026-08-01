@@ -31,3 +31,19 @@
   		}
  	}
 }
+
+.mobile--menu {
+  width: 0;
+  transition: width 0.4s ease;
+  .link {
+  	opacity: 0;
+  	transition: ease 0.4s opacity 0.3s;
+  }
+  &.is-open {
+    width: 142.5px;
+    opacity: 1;
+    .link {
+    	opacity: 1;
+    }
+  }
+}

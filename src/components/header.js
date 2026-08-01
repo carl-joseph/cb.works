@@ -50,9 +50,11 @@ const MobileMenu = () => {
   return (
     <div className='m-show mla'>
       <div className='flex gap-5'>
-        <p className='button' type='button' onClick={() => setOpen(!open)}>{open ? "Close" : "Menu"}</p>
-        {open && <Link to='/information'>Information</Link>}
-        {open && <Link to='/enquiry'>Enquiry</Link>}
+        <p className={'button '+(open ? 'open':'')} type='button' onClick={() => setOpen(!open)}>{open ? "Close" : "Menu"}</p>
+        <div className={`mobile--menu flex gap-5 overflow ${open ? "is-open" : ""}`}>
+          <Link className='link' to='/information'>Information,</Link>
+          <Link className='link' to='/enquiry'>Enquiry</Link>
+        </div>
       </div>
     </div>
   )

@@ -34,6 +34,18 @@
 	}
 }
 
+.button.open {
+	color:rgba(24,24,24,.4);
+	transition: 0.4s opacity ease;
+	&:before {
+		opacity: 0.4;
+		transition: 0.4s opacity ease;
+	}
+	&:hover {
+		color: #181818;
+	}
+}
+
 .tag {
 	text-transform: capitalize;
 	background-color: #eee;
