@@ -22,7 +22,7 @@ const Project = ({project, index}) => {
         {project.imageGallery.map((image, index) => (
           <SwiperSlide key={image.id || index}>
             <div className='flex flex-col gap-10'>
-              <Media image={image} title={project.title} />
+              <Media image={image} title={project.title} link={project.link} />
               {( index === 0 ? <Title title={project.title} index={projectIndex} link={project.link} />:'' )}
               {( index === 1 ? <Description description={project.description} />:'' )}
               {( index === 2 ? <Credit credit={project.designCredit} year={project.year} />:'' )}
@@ -38,7 +38,7 @@ const Title = ({title, index, link}) => {
   return (
     <div className='flex gap-5 sm-copy black'>
       <p>{index}. {title}</p>
-      {( link ? <><span className='grey'>/</span><a className='link-gr' target='_blank' rel='noreferrer' href={link}>Visit Site</a></>:'')}
+      {( link ? <><span className='grey'>/</span><a className='link-gr button animate' target='_blank' rel='noreferrer' href={link}>Visit Site</a></>:'')}
     </div>
   )
 }
@@ -61,16 +61,17 @@ const Credit = ({year, credit}) => {
 }
 
 
-const Media = ({ image, title }) => {
+const Media = ({ image, title, link }) => {
   const img = image?.gatsbyImageData
   const isPortrait = img ? img.height > img.width : false
   const video = image.customData.video; 
   return (
     <div className='bg-grey ratio-1-1 flex pos-rel'>
-        <div className={`project-media bg-grey pos-rel z-2 ${isPortrait ? "ratio-9-19 portrait" : "ratio-8-5"}`}>
-          {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt={title || ""} /> : ""}
-          {video ? <video src={video} playsInline autoPlay muted loop className='bg-image' />:''}
-        </div>
+      <div className={`bg-grey project-media  pos-rel z-2 ${isPortrait ? "ratio-9-19 portrait" : "ratio-8-5"}`}>
+        <a className='bg-image z-2' href={link} target='_blank' rel='noreferrer'/>
+        {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt={title || ""} /> : ""}
+        {video ? <video src={video} playsInline autoPlay muted loop className='bg-image' />:''}
+      </div>
     </div>
   )
 }
