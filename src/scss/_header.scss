@@ -21,7 +21,7 @@
 
 .masthead .information {
 	height: auto;
-  	overflow: hidden;
+  overflow: hidden;
  	transition: height 0.65s ease;
  	.internal {
  		opacity: 0;
@@ -37,7 +37,7 @@
   transition: width 0.4s ease;
   .link {
   	opacity: 0;
-  	transition: ease 0.4s opacity 0.3s;
+  	transition: ease 0.4s opacity 0.2s;
   }
   &.is-open {
     width: 142.5px;

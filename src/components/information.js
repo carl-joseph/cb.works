@@ -17,11 +17,12 @@ const Profile = ({image, video}) => {
   return (
     <div className='flex flex-col gap-15 m-gap-0'>
       <div className='m-hide' style={{height:'14.5px'}} />
-      <div className='max-225 m-mt40 m-mb40 m-max-150 m-100 m-ma'>
+      <div className='max-225 flex flex-col gap-5 m-mt40 m-mb40 m-max-150 m-100 m-ma'>
         <div className='ratio-4-5 bg-grey pos-rel'>
           {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt='CB Works' /> : ""}
           {( video ? <video src={video} muted playsInline autoPlay loop className='bg-image' />:'')}
         </div>
+        <p className='f-11 m-show op-50'>Carl Beaverson, Director</p>
       </div>
       <Spacer className='m-show' />
     </div>
