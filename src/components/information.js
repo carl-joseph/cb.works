@@ -22,7 +22,7 @@ const Profile = ({image, video}) => {
           {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt='CB Works' /> : ""}
           {( video ? <video src={video} muted playsInline autoPlay loop className='bg-image' />:'')}
         </div>
-        <p className='f-11 m-show op-50'>Carl Beaverson, Director</p>
+        <p className='f-10 m-show op-50'>Carl Beaverson, Director</p>
       </div>
       <Spacer className='m-show' />
     </div>

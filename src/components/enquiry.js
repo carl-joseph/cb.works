@@ -37,7 +37,7 @@ const Preview = ({ gallery }) => {
             </div>
           </div>
         </Link>
-        <p className='f-11 m-show op-50'>Selected Work</p>
+        <p className='f-10 m-show op-50'>Selected Work</p>
         <Spacer className='m-show' />
       </div>
     </div>
