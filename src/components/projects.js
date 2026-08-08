@@ -38,7 +38,7 @@ const Title = ({title, index, link}) => {
   return (
     <div className='flex gap-5 sm-copy black'>
       <p>{index}. {title}</p>
-      {( link ? <><span className='grey'>/</span><a className='link-gr button animate' target='_blank' rel='noreferrer' href={link}>Visit Site</a></>:'')}
+      {( link ? <><span className='grey'>/</span><a className='link-gr' target='_blank' rel='noreferrer' href={link}>Visit Site</a></>:'')}
     </div>
   )
 }

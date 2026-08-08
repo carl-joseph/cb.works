@@ -49,7 +49,7 @@ const Information = () => {
 const Socials = () => {
   return (
     <div className=''>
-      <a className='link-gr' target='_blank' rel='noreferrer' href='https://x.com/CarlBeaverson'>X</a><span className='op-50'>,</span> <a className='link-gr' target='_blank' rel='noreferrer' href='https://instagram.com/cb.works'>Instagram</a><span className='op-50'>,</span> <a className='link-gr' target='_blank' rel='noreferrer' href='https://linkedin.com/cb.works'>LinkedIn</a> 
+      <a className='link-gr' target='_blank' rel='noreferrer' href='https://x.com/CarlBeaverson'>X</a><span className='op-50'>,</span> <a className='link-gr' target='_blank' rel='noreferrer' href='https://instagram.com/cb.works'>Instagram</a><span className='op-50'>,</span> <a className='link-gr' target='_blank' rel='noreferrer' href='https://au.linkedin.com/in/carl-beaverson'>LinkedIn</a> 
     </div>
   )
 }
