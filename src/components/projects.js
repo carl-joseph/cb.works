@@ -6,7 +6,7 @@ import "swiper/css"
 
 export default function Grid({ projects }) {
   return (
-    <div className='p20 mth m-m0 flex flex-col gap-20 row-150 m-pr0 m-pl0'>
+    <div className='p20 mth m-m0 m-mt40 flex flex-col gap-20 row-150 m-pr0 m-pl0'>
       {projects.map((project, index) => (
         <Project project={project.node} index={index+1} key={index} />
       ))}
