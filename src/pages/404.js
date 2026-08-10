@@ -6,8 +6,12 @@ import Layout from "../components/layout"
 export default function NotFoundPage() {
   return (
     <Layout>
-      <h1>404: Not Found</h1>
-      <p>You've just hit a page that doesn&#39;t exist... the sadness.</p>
+      <div className='h-100vh flex'>
+        <div className='ma flex flex-col gap-10 text-center'>
+          <h1 className='sm-copy'>404: Not Found</h1>
+          <p className='op-50'>You've just hit a page that doesn&#39;t exist. Please return home.</p>
+        </div>
+      </div>
     </Layout>
   )
 }
