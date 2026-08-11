@@ -13,16 +13,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [process.env.GATSBY_GOOGLE_GTAG],
-        gtagConfig: {
-          anonymize_ip: true,
-          cookie_expires: 0,
-          send_page_view: true,
-        },
-        pluginConfig: {
-          head: true,
-          respectDNT: false,
-        },
+        trackingIds: [
+          "G-30KS4BCFS3"
+        ]
       },
     },
     `gatsby-plugin-image`,
