@@ -28,7 +28,7 @@ const Preview = ({ gallery }) => {
     <div>
       <div className="max-225 m-mt40 m-mb40 m-max-150 m-ma flex flex-col gap-5">
         <div className='m-hide' style={{height:'14.5px'}} />
-        <Link to='/'>
+        <Link className='preview-link flex flex-col gap-5' to='/'>
           <div className="bg-grey flex ratio-3-4">
             <div className="project-media bg-grey-100 ratio-8-5 pos-rel">
               {gallery.map((image, index) => (
@@ -36,8 +36,8 @@ const Preview = ({ gallery }) => {
               ))}
             </div>
           </div>
+          <p to='/' className='f-10 caption op-50'>Recent Work ↗</p>
         </Link>
-        <Link to='/' className='f-10 m-show op-50'>Recent Work ↗</Link>
         <Spacer className='m-show' />
       </div>
     </div>

@@ -49,9 +49,9 @@ class EnquiryForm extends React.Component {
         <input type="hidden" name="form-name" value="contact" />
         <input required={true} name="Name" type="text" className="input" placeholder="Name"/>
         <input required={true} name="Email" type="text" className="input" placeholder="Email Address" />
-        <input name="Project Type" type="text" className="input" placeholder="Project Type" />
-        <input name="Website" type="text" className="input" placeholder="Existing Website (if available)" />
-        <input name="Figma Link" type="text" className="input" placeholder="Figma Link (if applicable)" />
+        <input name="Company Name" type="text" className="input" placeholder="Company Name" />
+        <input name="Design File" type="text" className="input" placeholder="Design File (Figma)" />
+        <input name="Desired Launch" type="text" className="input" placeholder="Desired Launch Date" />
         <textarea onChange={(e) => this.setState({message:e.target.value})} value={this.state.message} className="textarea input" name="message" placeholder='Project Description' type="text" id="message" />
         <button type="submit" className="submit-button input">Submit</button>
         <p className='grey mt5'>Typical Response time: 12 hours</p>

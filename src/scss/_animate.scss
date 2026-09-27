@@ -13,6 +13,22 @@
   }
 }
 
+/* ------------ Preview Link Styles ------------ */
+
+.preview-link {
+  &:hover {
+    .caption {
+      opacity: .5;
+    }
+  }
+  .caption {
+    transition: 0.3s ease opacity;
+    opacity: 0;
+    @media (max-width: 768px) {
+      opacity: 0.5;
+    }
+  }
+}
 /* ------------ Page Transition Styles ------------ */
 
 .page--transition {
