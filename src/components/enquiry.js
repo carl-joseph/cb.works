@@ -29,7 +29,7 @@ const Preview = ({ gallery }) => {
       <div className="max-225 m-mt40 m-mb40 m-max-150 m-ma flex flex-col gap-5">
         <div className='m-hide' style={{height:'14.5px'}} />
         <Link to='/'>
-          <div className="bg-grey flex ratio-4-5">
+          <div className="bg-grey flex ratio-3-4">
             <div className="project-media bg-grey-100 ratio-8-5 pos-rel">
               {gallery.map((image, index) => (
                 <GatsbyImage key={image.id || index} image={image.gatsbyImageData} className={`bg-image preview-image ${index === active ? "active z-2" : ""}`}alt={image.title || ""} />
@@ -37,7 +37,7 @@ const Preview = ({ gallery }) => {
             </div>
           </div>
         </Link>
-        <p className='f-10 m-show op-50'>Selected Work</p>
+        <p className='f-10 m-show op-50'>Recent Work</p>
         <Spacer className='m-show' />
       </div>
     </div>

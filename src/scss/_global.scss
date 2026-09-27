@@ -50,6 +50,10 @@ a {
   transform: translateY(1px);
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 /* ------------ Grid Styles ------------ */
 
 .grid {
@@ -292,6 +296,10 @@ div.bg-image,
 .ratio-9-19 {
   aspect-ratio: 9 / 19;
   aspect-ratio: 400 / 867;
+}
+
+.ratio-9-16 {
+  aspect-ratio: 9 / 16;
 }
 
 /* ------------ Width Styles ------------ */

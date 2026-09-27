@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { Profile } from "../components/profile"
 import Spacer from "../components/spacer"
 import { Link } from "gatsby"
 
@@ -9,22 +10,6 @@ export default function Information({ information }) {
       <Profile image={information.image} video={information.video} />
       <Content information={information} />
       <div style={{height:'100px'}} className='m-show'/>
-    </div>
-  )
-}
-
-const Profile = ({image, video}) => {
-  return (
-    <div className='flex flex-col gap-15 m-gap-0'>
-      <div className='m-hide' style={{height:'14.5px'}} />
-      <div className='max-225 flex flex-col gap-5 m-mt40 m-mb40 m-max-150 m-100 m-ma'>
-        <div className='ratio-4-5 bg-grey pos-rel'>
-          {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt='CB Works' /> : ""}
-          {( video ? <video src={video} muted playsInline autoPlay loop className='bg-image' />:'')}
-        </div>
-        <p className='f-10 m-show op-50'>Carl Beaverson, Director</p>
-      </div>
-      <Spacer className='m-show' />
     </div>
   )
 }
