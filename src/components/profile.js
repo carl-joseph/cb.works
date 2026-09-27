@@ -34,7 +34,7 @@ export const Profile = ({image, video}) => {
           {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt='CB Works' /> : ""}
           {( video ? <video ref={originalVideoRef} src={video} muted playsInline autoPlay loop className='bg-image' />:'')}
         </div>
-        <p onClick={openModal} className='f-10 pointer m-show op-50'>Studio BTS</p>
+        <p onClick={openModal} className='f-10 pointer m-show op-50'>Studio BTS ↗</p>
       </div>
       <Spacer className='m-show' />
     </div>
