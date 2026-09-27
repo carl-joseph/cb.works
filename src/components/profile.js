@@ -8,13 +8,14 @@ export const Profile = ({image, video}) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [previewPaused, setPreviewPaused] = useState(false)
   const originalVideoRef = useRef(null)
 
   const openModal = () => {
     originalVideoRef.current?.pause()
     setIsClosing(false)
+    setPreviewPaused(true)
     setIsOpen(true)
-
     requestAnimationFrame(() => {
       setIsVisible(true)
     })
@@ -29,7 +30,7 @@ export const Profile = ({image, video}) => {
     <div className='flex flex-col gap-15 m-gap-0'>
       <div className='m-hide' style={{height:'14.5px'}} />
       <div className='max-225 flex flex-col gap-5 m-mt40 m-mb40 m-max-150 m-100 m-ma'>
-        <div className='ratio-3-4 pointer bg-grey pos-rel' onClick={openModal}>
+        <div className={`video--preview ratio-3-4 pointer bg-grey pos-rel${previewPaused ? " paused" : ""}`} onClick={openModal}>
           {image ? <GatsbyImage image={image.gatsbyImageData} className='bg-image' alt='CB Works' /> : ""}
           {( video ? <video ref={originalVideoRef} src={video} muted playsInline autoPlay loop className='bg-image' />:'')}
         </div>
@@ -38,7 +39,7 @@ export const Profile = ({image, video}) => {
       <Spacer className='m-show' />
     </div>
     {isOpen && (
-      <VideoPlayer video={video} image={image} isVisible={isVisible} isClosing={isClosing} closeModal={closeModal} onFadeOutEnd={() => { setIsOpen(false); setIsClosing(false); setIsVisible(false); originalVideoRef.current?.play().catch(() => {})}} />
+      <VideoPlayer video={video} image={image} isVisible={isVisible} isClosing={isClosing} closeModal={closeModal} onFadeOutEnd={() => { setIsOpen(false); setPreviewPaused(false); setIsClosing(false); setIsVisible(false); originalVideoRef.current?.play().catch(() => {})}} />
     )}
   </>
   )
