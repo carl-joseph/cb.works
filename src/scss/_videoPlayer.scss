@@ -4,6 +4,13 @@
 
 .video--preview {
 	position: relative;
+	transition: 0.2s ease transform;
+	&:hover {
+		transform: scale(1.015);
+		@media (max-width: 768px) {
+	    	transform: none;
+	    }
+	}
 	&:before {
 		opacity: 0;
 		content: '';
